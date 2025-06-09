@@ -6,24 +6,26 @@ import jakarta.persistence.*;
 @Table(name = "Users")
 public class User {
 
+    @Column(name = "UserID")
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long userID;
 
-    @Column(nullable = false)
+    @Column(name = "FullName", nullable = false)
     private String fullName;
 
-    @Column(nullable = false, unique = true)
+    @Column(name = "Email", nullable = false, unique = true)
     private String email;
 
-    @Column(nullable = false)
+    @Column(name = "PasswordHash", nullable = false)
     private String passwordHash;
 
-    @Column(nullable = false)
+    @Column(name = "Role", nullable = false)
     private String role;
 
-    @Column(nullable = false)
+    @Column(name = "isActive", nullable = false)
     private Boolean isActive;
+
 
     // Getters ve Setters
     public Long getUserID() { return userID; }
